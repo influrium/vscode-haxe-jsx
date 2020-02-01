@@ -1,3 +1,4 @@
 .vscode
 .vscodeignore
 vsc-extension-quickstart.md
+*.vsix
