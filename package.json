@@ -1,0 +1,48 @@
+{
+    "name": "haxe-jsx",
+    "version": "0.0.1",
+    "publisher": "influrium",
+    "author": {
+        "name": "Constantine Teplyakov"
+    },
+    "displayName": "Haxe JSX",
+    "description": "Syntax highlighting for JSX macro of haxe react lib",
+    "license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/influrium/vscode-haxe-jsx"
+    },
+    "bugs": {
+        "url": "https://github.com/influrium/vscode-haxe-jsx/issues"
+    },
+    "homepage": "https://github.com/influrium/vscode-haxe-jsx",
+    "icon": "haxe-logo.png",
+	"galleryBanner": {
+        "theme": "dark",
+        "color": "#A84B38"
+	},
+    "engines": {
+        "vscode": "^1.9.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "contributes": {
+        "grammars": [{
+            "path": "./syntaxes/injection.json",
+            "scopeName": "source.hx.jsx",
+            "injectTo": ["source.hx"],
+            "embeddedLanguages": {
+                "meta.embedded.block.jsx": "haxe"
+            },
+            "tokenTypes": {
+                "meta.jsx.hx": "other",
+                "tag.open.hx": "other",
+                "tag.closed.hx": "other"
+            }
+        }]
+    },
+    "dependencies": {
+
+    }
+}
