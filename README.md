@@ -13,6 +13,10 @@ Extesion based on [Jérémy Faivre](https://github.com/jeremyfa) declined pull r
 
 In the command palette (`ctrl-shift-p`) select `Install Extension` and choose `Haxe JSX`.
 
+### 0.0.4
+
+Added single quoted string iterpolation highlighting
+
 ### 0.0.1
 
 Initial release

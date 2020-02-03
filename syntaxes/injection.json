@@ -47,6 +47,8 @@
         "jsx-in-single-quoted": {
             "name": "meta.jsx.hx",
             "patterns": [{
+                "include": "#haxe-string-interpolation"
+            }, {
                 "include": "#jsx-tag-open-in-single-quoted"
             }, {
                 "include": "#jsx-tag-close"
@@ -126,6 +128,8 @@
                 "include": "#jsx-string-double-quoted"
             },{
                 "include": "#jsx-string-single-quoted-escaped"
+            },{
+                "include": "#haxe-string-interpolation"
             },{
                 "include": "#jsx-evaluated-code"
             }]
@@ -229,6 +233,39 @@
             },
             "patterns": [{
                 "include": "$self"
+            }]
+        },
+        "haxe-string-interpolation": {
+            "patterns": [{
+                "begin": "\\$(?=\\$)",
+                "beginCaptures": {
+                    "0": { "name": "constant.character.escape.hx" }
+                },
+                "end": "\\$",
+                "endCaptures": {
+                    "0": { "name": "constant.character.escape.hx" }
+                },
+                "name": "string.quoted.single.hx"
+            }, {
+                "include": "source.hx#string-escape-sequences"
+            }, {
+                "begin": "(\\${)",
+                "beginCaptures": {
+                    "0": { "name": "punctuation.definition.block.begin.hx" }
+                },
+                "end": "(})",
+                "endCaptures": {
+                    "0": { "name": "punctuation.definition.block.end.hx" }
+                },
+                "patterns": [{
+                    "include": "source.hx#block-contents"
+                }]
+            }, {
+                "match": "(\\$)([_a-zA-Z]\\w*)",
+                "captures": {
+                    "1": { "name": "punctuation.definition.block.begin.hx" },
+                    "2": { "name": "variable.other.hx" }
+                }
             }]
         }
     }
