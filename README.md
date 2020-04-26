@@ -13,6 +13,10 @@ Extesion based on [Jérémy Faivre](https://github.com/jeremyfa) declined pull r
 
 In the command palette (`ctrl-shift-p`) select `Install Extension` and choose `Haxe JSX`.
 
+### 0.0.5
+
+Added support of HXX from coconut.ui and tink_hxx
+
 ### 0.0.4
 
 Added single quoted string iterpolation highlighting
