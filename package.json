@@ -1,13 +1,13 @@
 {
     "name": "haxe-jsx",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "influrium",
     "author": {
         "name": "Constantine Teplyakov"
     },
     "displayName": "Haxe JSX",
-    "description": "Syntax highlighting for JSX macro of haxe react lib",
-    "keywords": ["haxe", "jsx", "react"],
+    "description": "Syntax highlighting for JSX macro of haxe react lib and HXX of coconut.ui and tink_hxx",
+    "keywords": ["haxe", "jsx", "hxx", "react", "highlight", "syntax"],
     "license": "MIT",
 	"repository": {
 		"type": "git",
