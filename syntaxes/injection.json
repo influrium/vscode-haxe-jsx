@@ -1,15 +1,15 @@
 {
     "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
     "fileTypes": ["hx"],
-    "injectionSelector": "L:meta.method.block.hx",
     "scopeName": "source.hx.jsx",
+    "injectionSelector": "L:meta.method.block.hx, L:meta.block.hx",
     "patterns": [{
         "include": "#jsx"
     }],
     "repository": {
         "jsx": {
             "patterns": [{
-                "begin": "\\b(jsx) *\\( *(')",
+                "begin": "\\b(jsx|hxx) *\\( *(')",
                 "beginCaptures": {
                     "1": { "name": "keyword.other.jsx.hx" },
                     "2": { "name": "punctuation.definition.comment.hx" }
@@ -26,7 +26,7 @@
                     "include": "#jsx-in-single-quoted"
                 }]
             }, {
-                "begin": "\\b(jsx) *\\( *(\")",
+                "begin": "\\b(jsx|hxx) *\\( *(\")",
                 "beginCaptures": {
                     "1": { "name": "keyword.other.jsx.hx" },
                     "2": { "name": "punctuation.definition.comment.hx" }
@@ -41,6 +41,43 @@
                     "name": "constant.character.escape.hx"
                 },{
                     "include": "#jsx-in-double-quoted"
+                }]
+            }, {
+                "begin": "(@hxx) +(')",
+                "beginCaptures": {
+                    "1": { "name": "keyword.other.jsx.hx" },
+                    "2": { "name": "punctuation.definition.comment.hx" }
+                },
+                "end": "(') *;",
+                "endCaptures": {
+                    "1": { "name": "punctuation.definition.comment.hx" }
+                },
+                "name": "meta.jsx.hx",
+                "patterns": [{
+                    "match": "\\.",
+                    "name": "constant.character.escape.hx"
+                }, {
+                    "include": "#jsx-in-single-quoted"
+                }]
+            }, {
+                "begin": "(function) +(render) *(\\() *(\\)) *(')",
+                "beginCaptures": {
+                    "1": { "name": "storage.type.function.hx" },
+                    "2": { "name": "entity.name.function.hx" },
+                    "3": { "name": "punctuation.definition.parameters.begin.hx" },
+                    "4": { "name": "punctuation.definition.parameters.end.hx" },
+                    "5": { "name": "punctuation.definition.comment.hx" }
+                },
+                "end": "(') *;",
+                "endCaptures": {
+                    "1": { "name": "punctuation.definition.comment.hx" }
+                },
+                "name": "meta.jsx.hx",
+                "patterns": [{
+                    "match": "\\.",
+                    "name": "constant.character.escape.hx"
+                }, {
+                    "include": "#jsx-in-single-quoted"
                 }]
             }]
         },
